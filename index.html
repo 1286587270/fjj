@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>肺结节信息查询系统</title>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+<script src="https://cdn.jsdelivr.net/npm/cornerstone-math@0.1.6/dist/cornerstoneMath.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cornerstone-core@2.2.4/dist/cornerstone.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cornerstone-web-image-loader@2.1.0/dist/cornerstoneWebImageLoader.js"></script>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/cornerstone-tools@3.0.0-b.641/dist/cornerstoneTools.js"></script>
+		<style>
+			#dinglan{
+			    background-color:#006179;
+			    height:100px;
+			 }
+	        #patient{
+				height:200px;
+				background-color:#006179;
+			}
+	        
+			#pic1{
+				height:1000px;
+				width: 1000px;
+				float:left;
+				}
+				.canvas {
+	           position: absolute;
+	         }
+			 #menu {
+	       width: 50px;
+	       background: #CCC;
+	        position: absolute;
+	        display: none;
+	    }
+		
+		#menu1 {
+	       width: 50px;
+	       background: #CCC;
+	        position: absolute;
+	        display: none;
+	    }
+		li{ list-style: none;}
+
+		
+		</style>	
+		
+	</head>
+	<body>
+		
+			<div id="dinglan">
+		<img src="https://www.jiangnan.edu.cn/images/logo.png" border="0" />
+		<a class="ding"><font size="7" color="white" >肺结节信息查询系统</font></a>
+		</div>	
+		<div class="row">
+			    <form id="form" class="form-horizontal">
+			        <div class="form-group">
+			            <div class="col-sm-3">
+			                <input type="file" id="selectFile"name="selectFile"/>
+							<button id="upload"type="button">检测</button>
+							<span id="process"></span>
+			            </div>
+			        </div>
+			    </form>
+			</div>
+		<div id="patient">
+			<a class="ding"><font size="5"  color="white">患者信息</font></a><br>
+			<a class="ding"><font size="5"  color="white">姓名:</font></a><br>
+			<a class="ding"><font size="5"  color="white">年龄:</font></a>
+		</div>
+		<div id="pic1">
+				<a class="ding"><font size="5"  >原始图像</font></a><br>
+			
+			<div style="width:512px;height:512px;position:relative;color: white;display:inline-block;border-style:solid;border-color:black;"
+		     oncontextmenu="return false"
+		     class='disable-selection noIbar'
+		     unselectable='on'
+		     onselectstart='return false;'
+			 onmousedown='return false;'>
+			 
+		    <div id="dicomImage"
+				 style="width:512px;height:512px;top:0px;left:0px; position:absolute">
+				 
+				 <canvas id="canvas1"  class="canvas"></canvas>
+				 <div id="menu">
+			          
+					<li>添加框</li>   
+					
+					  </div>
+					  <div id="menu1">
+			          
+						 
+						<li>删除框</li>
+						  </div>
+			</div>
+		
+		</div>
+		</div>
+	
+	</body>
+	<!-- include the cornerstone library -->
+	<!-- include the cornerstone library -->
+	
+	<!-- include the dicomParser library as the WADO image loader depends on it -->
+
+<script src="static/js/cornerstone.min.js"></script>
+	<SCRIPT src="static/js/cornerstoneMath.min.js"></SCRIPT>
+	<script src="static/js/cornerstoneTools.min.js"></script>
+	
+	<script src="static/js/dicomParser.min.js"></script>
+	<!-- include the cornerstoneWADOImageLoader library -->
+	<script src="static/js/cornerstoneWADOImageLoader.min.js"></script>
+	
+	<!-- uids -->
+	<script src="static/js/uids.js"></script>
+	
+	<!-- Lines ONLY required for this example to run without building the project -->
+	<!-- <script>window.cornerstoneWADOImageLoader || document.write('<script src="https://unpkg.com/cornerstone-wado-image-loader">\x3C/script>')</script> -->
+	<!-- <script src="static/js/utils/initializeWebWorkers.js"></script> -->
+	
+	
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+		<script src="static/js/show.js"></script>
+	
+
+</html>
